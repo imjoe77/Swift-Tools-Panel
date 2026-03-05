@@ -1620,618 +1620,314 @@
 
     /* =============================================
        RESPONSIVE MEDIA QUERIES
-       Only layout/size adjustments — no design changes
        ============================================= */
 
-    /* Tablet landscape and below (≤1024px) */
-    @media (max-width: 1024px) {
-      .container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-auto-flow: row;
-      }
+    /* ---- SHARED mobile card fix ----
+       On screens where the fixed 380px card breaks,
+       we switch .item2 to normal flow so img/button
+       don't need absolute pixel offsets.
+    ---- */
 
-      .item2 {
-        width: 320px;
-        margin-left: 60px;
-        margin-top: 60px;
-      }
+    @media (max-width: 900px) {
 
-      .item2 img {
-        width: 300px;
-        height: 240px;
-        margin-left: -60px;
-      }
-
-      .itemlast2 {
-        display: none;
-      }
-
-      .menu {
-        width: 6vw;
-      }
-
-      .icon {
-        font-size: 16px;
-        margin: 20px auto;
-      }
-
-      .weatbg2 {
-        width: 70vw;
-        margin-left: 15vw;
-      }
-
-      .jkbg,
-      .jkbg2 {
-        width: 70vw;
-        margin-left: 15vw;
-      }
-
-      #head {
-        font-size: 5vw;
-      }
-
-      #head2 {
-        font-size: 2.2vw;
-      }
-
-      .start-btn {
-        font-size: 2.2vw;
-      }
-
-      .emoji-row {
-        font-size: 5vw;
-      }
-
-      #chuck {
-        width: 28vw;
-        left: 36%;
-      }
-
-      #jokeBtn {
-        width: 32vw;
-        left: 9vw;
-      }
-
-      .calc {
-        width: 50vw;
-      }
-
-      .item {
-        width: 8vw;
-      }
-
-      .calc button {
-        font-size: 2.5vw;
-      }
-
-      #clr, #clr2 {
-        width: 8vw;
-      }
-
-      .defbg2 {
-        width: 90vw;
-        margin-left: 5vw;
-        margin-top: 10vw;
-      }
-
-      #lghd {
-        left: 5vw;
-        font-size: 4vh;
-      }
-
-      #aim {
-        left: 5vw;
-        font-size: 2.5vh;
-      }
-
-      #clgin {
-        width: 50vw;
-        left: 2vw;
-        height: 45vh;
-      }
-
-      #inp1, #inp2 {
-        width: 35vw;
-        right: 2vw;
-        font-size: 1.8vw;
-      }
-
-      #loginBtn {
-        width: 18vw;
-        right: 6vw;
-      }
-
-      #lg {
-        right: 5vw;
-      }
-
-      .navbtn {
-        font-size: 1.8vh;
-      }
-
-      #lbtn { left: 5vw; }
-      #tbtn { left: 22vw; }
-      #rbtn { left: 38vw; }
-      #sbtn { left: 54vw; }
-      #cbtn { left: 70vw; }
-
-      .match-card {
-        width: 40%;
-        height: 35%;
-      }
-
-      #match3 { right: 3%; }
-
-      .rank-table {
-        width: 95%;
-      }
-    }
-
-    /* Tablet portrait and large phones (≤768px) */
-    @media (max-width: 768px) {
+      /* === HEADER === */
       #mainhd {
-        font-size: 28px;
-        padding-left: 8vw;
+        font-size: 26px;
+        padding-left: 9vw;
       }
 
+      /* === SIDEBAR === */
       .menu {
         width: 8vw;
       }
-
       .icon {
-        font-size: 14px;
-        margin: 15px auto;
+        font-size: 13px;
+        margin: 14px auto;
       }
 
+      /* === TOOL CARD GRID — single column === */
       .container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-auto-flow: row;
-        margin-left: 8vw;
+        margin-left: 9vw;
+        padding-right: 2vw;
       }
 
+      /* === ITEM2 CARD — switch to normal flow === */
       .item2 {
+        /* replace fixed 380×300px with fluid sizing */
         width: 85vw;
         height: auto;
+        min-height: unset;
         margin-left: 2vw;
-        margin-top: 40px;
-        padding-bottom: 20px;
-      }
-
-      .item2 img {
+        margin-top: 30px;
+        border-radius: 16px;
+        overflow: hidden;
         position: relative;
-        width: 100%;
-        height: 200px;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 10px 10px 0 0;
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
+      /* Image: was absolutely positioned with margin-left:-85px — fix to block flow */
+      .item2 img {
+        position: relative !important;
+        width: 100% !important;
+        height: 180px !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        border-radius: 12px 12px 0 0 !important;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* h2 label */
+      .item2 h2 {
+        padding: 8px 12px 4px;
+        font-size: 18px;
+      }
+
+      /* LOAD button: was margin-top:320px — reset to normal flow */
       .item2 button {
-        margin-top: 220px;
-        width: 80px;
+        position: relative !important;
+        margin-top: 8px !important;
+        margin-left: 12px !important;
+        width: 90px;
+        height: 32px;
         font-size: 16px;
       }
 
+      /* Hide decorative side panel */
       .itemlast2 {
         display: none;
       }
 
-      /* Calculator */
+      /* === CALCULATOR === */
       .main {
-        width: 98vw;
+        width: 96vw;
         left: 0;
+        margin-left: 1vw;
       }
-
       .calc {
-        width: 80vw;
-        height: 80vh;
+        width: 76vw;
+        height: 78vh;
+        gap: 4vh 2vw;
       }
-
       .item {
-        width: 18vw;
-        margin-left: 3vw;
+        width: 17vw;
+        height: 7vh;
+        margin-left: 2.5vw;
       }
-
       .calc button {
         font-size: 4vw;
         border-radius: 2vw;
       }
-
-      #clr, #clr2 {
-        width: 18vw;
+      #clr {
+        width: 16vw;
+        height: 4vh;
         font-size: 3vw;
+        margin-right: 0;
+        left: 2vw;
+        top: 1vh;
       }
-
-      /* Weather */
-      .weatbg {
-        width: 94vw;
-        margin-left: 3vw;
-        margin-top: 10vh;
-      }
-
-      #weatimg {
+      #clr2 {
         width: 20vw;
+        height: 4vh;
+        font-size: 2.5vw;
+        margin-right: 0;
+        left: 2vw;
+        margin-top: 6vh;
       }
 
-      #w1 {
-        font-size: 7vh;
-        margin-left: 25vw;
+      /* === WEATHER intro screen === */
+      .weatbg {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 8vh;
       }
-
-      #w2 {
-        font-size: 3.5vh;
-        margin-left: 25vw;
+      #weatimg {
+        width: 22vw;
+        top: 8vh;
       }
+      #w1 { font-size: 7vh; margin-left: 28vw; }
+      #w2 { font-size: 3.5vh; margin-left: 28vw; }
+      #next { width: 10vw; height: 7vh; margin-left: 42vw; }
 
-      #next {
-        width: 10vw;
-        height: 7vh;
-        margin-left: 40vw;
-      }
-
+      /* === WEATHER main screen === */
       .weatbg2 {
-        width: 94vw;
-        margin-left: 3vw;
-        margin-top: 10vh;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 8vh;
       }
+      #place  { font-size: 30px; left: 25%; top: 6%; }
+      #temp   { font-size: 46px; left: 30%; top: 13%; }
+      #weather2 { font-size: 16px; left: 18%; top: 24%; }
+      #etc1   { font-size: 16px; left: 18%; top: 30%; }
+      #etc2   { font-size: 16px; left: 50%; top: 30%; }
+      #addbtn, #dmbtn, #dmbtn2 { width: 9vw; height: 5vh; font-size: 2.5vh; }
 
-      #place { font-size: 32px; left: 35%; }
-      #temp { font-size: 50px; left: 38%; }
-      #weather2 { font-size: 18px; left: 30%; }
-      #etc1 { font-size: 18px; left: 30%; }
-      #etc2 { font-size: 18px; left: 52%; }
+      /* weather search */
+      #searchInput { width: 72vw; }
+      .fact-box { white-space: normal; font-size: 0.85rem; }
 
-      #addbtn, #dmbtn, #dmbtn2 {
-        width: 8vw;
-        height: 5vh;
-        font-size: 2.5vh;
-      }
-
-      /* Search page */
-      #searchInput {
-        width: 70vw;
-      }
-
-      .fact-box {
-        white-space: normal;
-        font-size: 0.9rem;
-      }
-
-      /* Weather card */
+      /* weather card */
       #place2 { font-size: 7vh; }
-      #temp2 { font-size: 10vh; }
-      #wetc2 { left: 5vw; }
-      #etc3 { left: 35vw; }
+      #temp2  { font-size: 10vh; }
+      #wetc2  { left: 5vw; }
+      #etc3   { left: 38vw; }
 
-      /* Joke */
+      /* === JOKE === */
       .jkbg, .jkbg2 {
-        width: 92vw;
-        margin-left: 4vw;
+        width: 90vw;
+        margin-left: 5vw;
       }
+      #head        { font-size: 9vw; }
+      #head2       { font-size: 4vw; }
+      .start-btn   { font-size: 4.5vw; padding: 1.2vh 5vw; }
+      .emoji-row   { font-size: 9vw; }
+      #chuck       { width: 38vw; left: 31%; }
+      #jokeBtn     { width: 52vw; height: 52vw; left: 4vw; top: 17vh; }
+      #text        { font-size: 2.5vh; bottom: 4%; text-align: center; padding: 0 4vw; }
+      #jokeui2     { width: 84vw; height: auto; min-height: 24vh; }
+      .joketext    { font-size: 3vh; }
+      #nextBtn     { width: 32vw; height: 6vh; }
+      #xbtn        { width: 5vw; }
+      .xbtn2       { width: 6vw; }
 
-      #head { font-size: 8vw; }
-      #head2 { font-size: 3.5vw; }
-      .start-btn { font-size: 4vw; }
-      .emoji-row { font-size: 8vw; }
-
-      #chuck {
-        width: 40vw;
-        left: 30%;
-      }
-
-      #jokeBtn {
-        width: 55vw;
-        height: 55vw;
-        left: 5vw;
-        top: 18vh;
-      }
-
-      #text {
-        font-size: 2.5vh;
-        bottom: 5%;
-        text-align: center;
-        padding: 0 5vw;
-      }
-
-      #jokeui2 {
-        width: 85vw;
-        height: auto;
-        min-height: 25vh;
-      }
-
-      .joketext { font-size: 3vh; }
-
-      #nextBtn {
-        width: 30vw;
-        height: 6vh;
-      }
-
-      #xbtn { width: 5vw; }
-
-      .xbtn2 { width: 6vw; }
-
-      /* Cricket */
+      /* === CRICKET login === */
       .defbg2 {
-        width: 96vw;
-        margin-left: 2vw;
+        width: 90vw;
+        margin-left: 5vw;
         margin-top: 5vw;
         height: auto;
         min-height: 90vh;
       }
-
-      .cricbg {
-        flex-direction: column;
-      }
-
-      #clgin {
-        display: none;
-      }
-
-      #lghd { left: 5vw; font-size: 4vh; top: 4vh; }
-      #aim { left: 5vw; font-size: 2vh; top: 12vh; }
-      #lg { right: 5vw; font-size: 4vh; top: 4vh; }
-
+      .cricbg { flex-direction: column; }
+      #clgin  { display: none; }
+      #lghd   { left: 5vw; font-size: 4vh; top: 4vh; }
+      #aim    { left: 5vw; font-size: 2vh; top: 12vh; }
+      #lg     { right: 5vw; font-size: 4vh; top: 4vh; }
       #inp1 {
-        width: 70vw;
-        right: 5vw;
-        font-size: 3.5vw;
-        border-radius: 3vw;
-        bottom: 52vh;
+        width: 68vw; right: 5vw; font-size: 3.5vw;
+        border-radius: 3vw; bottom: 52vh;
       }
-
       #inp2 {
-        width: 70vw;
-        right: 5vw;
-        font-size: 3.5vw;
-        border-radius: 3vw;
-        bottom: 42vh;
+        width: 68vw; right: 5vw; font-size: 3.5vw;
+        border-radius: 3vw; bottom: 42vh;
       }
+      #loginBtn { width: 34vw; right: 5vw; bottom: 30vh; }
 
-      #loginBtn {
-        width: 35vw;
-        right: 5vw;
-        bottom: 32vh;
-      }
-
+      /* nav buttons: switch from absolute positions to flex layout */
       .navbtn {
         font-size: 1.3vh;
         position: relative;
-        top: auto;
-        left: auto;
+        top: auto; left: auto;
+        white-space: nowrap;
       }
-
       .nav, .nav2, .nav3, .nav4 {
-        position: absolute;
         justify-content: space-evenly;
-        padding: 0 1vw;
+        padding: 0;
         flex-wrap: nowrap;
         gap: 0;
+        height: auto;
+        min-height: 6vh;
       }
-
       #lbtn, #tbtn, #rbtn, #sbtn, #cbtn {
         position: relative;
-        top: auto;
-        left: auto;
+        top: auto; left: auto;
       }
 
-      .match-box {
-        width: 85vw;
-      }
+      /* cricket match boxes */
+      .match-box { width: 84vw; }
 
-      /* Trivia */
-      .question-box {
-        width: 88vw;
-        font-size: 2.5vh;
-      }
+      /* trivia */
+      .question-box { width: 86vw; font-size: 2.5vh; }
+      .options      { width: 86vw; }
+      #summary      { width: 80vw; left: 10vw; }
 
-      .options {
-        width: 88vw;
-      }
+      /* rankings */
+      .rank-table { width: 96%; top: 80px; }
+      .rank-row   { font-size: 0.85rem; padding: 10px 12px; }
 
-      #summary {
-        width: 80vw;
-        left: 10vw;
-      }
-
-      /* Rankings */
-      .rank-table {
-        width: 96%;
-        top: 80px;
-      }
-
-      .rank-row {
-        font-size: 0.85rem;
-        padding: 10px 12px;
-      }
-
-      /* Review / match cards */
+      /* review / match cards: stack vertically */
       #mainbg {
         height: auto;
         min-height: 100vh;
-      }
-
-      .match-card {
-        width: 85vw;
-        height: 35vh;
-        position: relative;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        margin: 2vh auto;
-      }
-
-      #match1, #match2, #match3, #match4, #match5 {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-      }
-
-      #mainbg {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 8vh;
         padding-bottom: 4vh;
       }
-
       .title {
         position: relative;
-        top: auto;
-        left: auto;
+        top: auto; left: auto;
         transform: none;
         margin-bottom: 1vh;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         text-align: center;
+        white-space: normal;
       }
-
+      .match-card {
+        position: relative !important;
+        width: 84vw !important;
+        height: 32vh;
+        top: auto !important; left: auto !important;
+        right: auto !important; bottom: auto !important;
+        margin: 2vh auto;
+      }
       .httl { top: 22vh; left: 5vw; }
       .htl2 { top: 27vh; left: 3vw; }
     }
 
-    /* Small phones (≤480px) */
+    /* Small phones (≤480px) — tighten further */
     @media (max-width: 480px) {
-      #mainhd {
-        font-size: 22px;
-        padding-left: 10vw;
-      }
+      #mainhd { font-size: 20px; padding-left: 11vw; }
+      .menu   { width: 11vw; }
+      .icon   { font-size: 11px; margin: 11px auto; }
+      .container { margin-left: 11vw; }
 
-      .menu {
-        width: 10vw;
-      }
+      .item2        { width: 78vw; }
+      .item2 img    { height: 150px !important; }
+      .item2 h2     { font-size: 16px; }
+      .item2 button { width: 80px; font-size: 14px; }
 
-      .icon {
-        font-size: 12px;
-        margin: 12px auto;
-      }
+      .calc   { width: 86vw; }
+      .item   { width: 22vw; margin-left: 2vw; }
+      .calc button { font-size: 5vw; }
+      #clr, #clr2  { width: 22vw; font-size: 3.5vw; }
 
-      .container {
-        margin-left: 10vw;
-      }
+      .weatbg    { width: 88vw; margin-left: 6vw; }
+      #w1        { font-size: 6vh; margin-left: 30vw; }
+      #w2        { font-size: 3vh; margin-left: 30vw; }
+      #next      { width: 12vw; margin-left: 44vw; }
+      .weatbg2   { width: 88vw; margin-left: 6vw; }
+      #place     { font-size: 22px; left: 20%; }
+      #temp      { font-size: 36px; left: 25%; }
+      #weather2  { font-size: 13px; left: 12%; }
+      #etc1      { font-size: 13px; left: 12%; }
+      #etc2      { font-size: 13px; left: 48%; }
+      #searchInput { width: 80vw; }
 
-      .item2 {
-        width: 80vw;
-      }
+      .jkbg, .jkbg2 { width: 88vw; margin-left: 6vw; }
+      #head      { font-size: 11vw; }
+      #head2     { font-size: 5vw; }
+      .start-btn { font-size: 5.5vw; }
+      .emoji-row { font-size: 11vw; }
+      #chuck     { width: 48vw; left: 26%; }
+      #jokeBtn   { width: 62vw; height: 62vw; left: 2vw; }
+      #jokeui2   { width: 88vw; }
+      #nextBtn   { width: 40vw; }
 
-      .item2 img {
-        height: 160px;
-      }
+      .defbg2    { width: 88vw; margin-left: 6vw; }
+      #inp1, #inp2 { width: 72vw; font-size: 4vw; }
+      #loginBtn  { width: 38vw; }
+      .navbtn    { font-size: 1.1vh; }
 
-      /* Calculator */
-      .calc {
-        width: 88vw;
-      }
-
-      .item {
-        width: 22vw;
-        margin-left: 2vw;
-      }
-
-      .calc button {
-        font-size: 5vw;
-      }
-
-      #clr, #clr2 {
-        width: 22vw;
-        font-size: 3.5vw;
-      }
-
-      /* Weather */
-      .weatbg {
-        width: 90vw;
-        margin-left: 5vw;
-      }
-
-      #weatimg {
-        width: 25vw;
-      }
-
-      #w1 { font-size: 6vh; margin-left: 32vw; }
-      #w2 { font-size: 3vh; margin-left: 32vw; }
-
-      #next {
-        width: 12vw;
-        margin-left: 44vw;
-      }
-
-      .weatbg2 {
-        width: 90vw;
-        margin-left: 5vw;
-      }
-
-      #place { font-size: 24px; left: 28%; }
-      #temp { font-size: 40px; left: 32%; }
-      #weather2 { font-size: 14px; left: 20%; top: 28%; }
-      #etc1 { font-size: 14px; left: 20%; top: 34%; }
-      #etc2 { font-size: 14px; left: 50%; top: 34%; }
-
-      /* Joke */
-      .jkbg, .jkbg2 {
-        width: 90vw;
-        margin-left: 5vw;
-      }
-
-      #head { font-size: 10vw; }
-      #head2 { font-size: 4.5vw; }
-      .start-btn { font-size: 5vw; padding: 1.2vh 5vw; }
-      .emoji-row { font-size: 10vw; }
-
-      #chuck {
-        width: 50vw;
-        left: 25%;
-      }
-
-      #jokeBtn {
-        width: 65vw;
-        height: 65vw;
-        left: 2vw;
-        top: 16vh;
-      }
-
-      #jokeui2 {
-        width: 90vw;
-      }
-
-      #nextBtn {
-        width: 40vw;
-      }
-
-      /* Cricket */
-      .defbg2 {
-        width: 92vw;
-        margin-left: 4vw;
-      }
-
-      #inp1, #inp2 {
-        width: 75vw;
-        font-size: 4vw;
-      }
-
-      #loginBtn {
-        width: 40vw;
-      }
-
-      .navbtn {
-        font-size: 1.1vh;
-      }
-
-      .match-card {
-        width: 90vw;
-        height: 32vh;
-      }
-
-      .rank-row {
-        font-size: 0.78rem;
-        padding: 8px 10px;
-      }
-
-      #searchInput {
-        width: 80vw;
-      }
+      .match-card { width: 88vw !important; height: 30vh; }
+      .rank-row   { font-size: 0.76rem; padding: 8px 8px; }
     }
   </style>
 </head>
