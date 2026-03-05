@@ -1617,7 +1617,622 @@
     .bbtn:active {
       transform: scale(0.97);
     }
-  </style>
+
+    /* =============================================
+       RESPONSIVE MEDIA QUERIES
+       Only layout/size adjustments — no design changes
+       ============================================= */
+
+    /* Tablet landscape and below (≤1024px) */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+      }
+
+      .item2 {
+        width: 320px;
+        margin-left: 60px;
+        margin-top: 60px;
+      }
+
+      .item2 img {
+        width: 300px;
+        height: 240px;
+        margin-left: -60px;
+      }
+
+      .itemlast2 {
+        display: none;
+      }
+
+      .menu {
+        width: 6vw;
+      }
+
+      .icon {
+        font-size: 16px;
+        margin: 20px auto;
+      }
+
+      .weatbg2 {
+        width: 70vw;
+        margin-left: 15vw;
+      }
+
+      .jkbg,
+      .jkbg2 {
+        width: 70vw;
+        margin-left: 15vw;
+      }
+
+      #head {
+        font-size: 5vw;
+      }
+
+      #head2 {
+        font-size: 2.2vw;
+      }
+
+      .start-btn {
+        font-size: 2.2vw;
+      }
+
+      .emoji-row {
+        font-size: 5vw;
+      }
+
+      #chuck {
+        width: 28vw;
+        left: 36%;
+      }
+
+      #jokeBtn {
+        width: 32vw;
+        left: 9vw;
+      }
+
+      .calc {
+        width: 50vw;
+      }
+
+      .item {
+        width: 8vw;
+      }
+
+      .calc button {
+        font-size: 2.5vw;
+      }
+
+      #clr, #clr2 {
+        width: 8vw;
+      }
+
+      .defbg2 {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 10vw;
+      }
+
+      #lghd {
+        left: 5vw;
+        font-size: 4vh;
+      }
+
+      #aim {
+        left: 5vw;
+        font-size: 2.5vh;
+      }
+
+      #clgin {
+        width: 50vw;
+        left: 2vw;
+        height: 45vh;
+      }
+
+      #inp1, #inp2 {
+        width: 35vw;
+        right: 2vw;
+        font-size: 1.8vw;
+      }
+
+      #loginBtn {
+        width: 18vw;
+        right: 6vw;
+      }
+
+      #lg {
+        right: 5vw;
+      }
+
+      .navbtn {
+        font-size: 1.8vh;
+      }
+
+      #lbtn { left: 5vw; }
+      #tbtn { left: 22vw; }
+      #rbtn { left: 38vw; }
+      #sbtn { left: 54vw; }
+      #cbtn { left: 70vw; }
+
+      .match-card {
+        width: 40%;
+        height: 35%;
+      }
+
+      #match3 { right: 3%; }
+
+      .rank-table {
+        width: 95%;
+      }
+    }
+
+    /* Tablet portrait and large phones (≤768px) */
+    @media (max-width: 768px) {
+      #mainhd {
+        font-size: 28px;
+        padding-left: 8vw;
+      }
+
+      .menu {
+        width: 8vw;
+      }
+
+      .icon {
+        font-size: 14px;
+        margin: 15px auto;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        margin-left: 8vw;
+      }
+
+      .item2 {
+        width: 85vw;
+        height: auto;
+        margin-left: 2vw;
+        margin-top: 40px;
+        padding-bottom: 20px;
+      }
+
+      .item2 img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .item2 button {
+        margin-top: 220px;
+        width: 80px;
+        font-size: 16px;
+      }
+
+      .itemlast2 {
+        display: none;
+      }
+
+      /* Calculator */
+      .main {
+        width: 98vw;
+        left: 0;
+      }
+
+      .calc {
+        width: 80vw;
+        height: 80vh;
+      }
+
+      .item {
+        width: 18vw;
+        margin-left: 3vw;
+      }
+
+      .calc button {
+        font-size: 4vw;
+        border-radius: 2vw;
+      }
+
+      #clr, #clr2 {
+        width: 18vw;
+        font-size: 3vw;
+      }
+
+      /* Weather */
+      .weatbg {
+        width: 94vw;
+        margin-left: 3vw;
+        margin-top: 10vh;
+      }
+
+      #weatimg {
+        width: 20vw;
+      }
+
+      #w1 {
+        font-size: 7vh;
+        margin-left: 25vw;
+      }
+
+      #w2 {
+        font-size: 3.5vh;
+        margin-left: 25vw;
+      }
+
+      #next {
+        width: 10vw;
+        height: 7vh;
+        margin-left: 40vw;
+      }
+
+      .weatbg2 {
+        width: 94vw;
+        margin-left: 3vw;
+        margin-top: 10vh;
+      }
+
+      #place { font-size: 32px; left: 35%; }
+      #temp { font-size: 50px; left: 38%; }
+      #weather2 { font-size: 18px; left: 30%; }
+      #etc1 { font-size: 18px; left: 30%; }
+      #etc2 { font-size: 18px; left: 52%; }
+
+      #addbtn, #dmbtn, #dmbtn2 {
+        width: 8vw;
+        height: 5vh;
+        font-size: 2.5vh;
+      }
+
+      /* Search page */
+      #searchInput {
+        width: 70vw;
+      }
+
+      .fact-box {
+        white-space: normal;
+        font-size: 0.9rem;
+      }
+
+      /* Weather card */
+      #place2 { font-size: 7vh; }
+      #temp2 { font-size: 10vh; }
+      #wetc2 { left: 5vw; }
+      #etc3 { left: 35vw; }
+
+      /* Joke */
+      .jkbg, .jkbg2 {
+        width: 92vw;
+        margin-left: 4vw;
+      }
+
+      #head { font-size: 8vw; }
+      #head2 { font-size: 3.5vw; }
+      .start-btn { font-size: 4vw; }
+      .emoji-row { font-size: 8vw; }
+
+      #chuck {
+        width: 40vw;
+        left: 30%;
+      }
+
+      #jokeBtn {
+        width: 55vw;
+        height: 55vw;
+        left: 5vw;
+        top: 18vh;
+      }
+
+      #text {
+        font-size: 2.5vh;
+        bottom: 5%;
+        text-align: center;
+        padding: 0 5vw;
+      }
+
+      #jokeui2 {
+        width: 85vw;
+        height: auto;
+        min-height: 25vh;
+      }
+
+      .joketext { font-size: 3vh; }
+
+      #nextBtn {
+        width: 30vw;
+        height: 6vh;
+      }
+
+      #xbtn { width: 5vw; }
+
+      .xbtn2 { width: 6vw; }
+
+      /* Cricket */
+      .defbg2 {
+        width: 96vw;
+        margin-left: 2vw;
+        margin-top: 5vw;
+        height: auto;
+        min-height: 90vh;
+      }
+
+      .cricbg {
+        flex-direction: column;
+      }
+
+      #clgin {
+        display: none;
+      }
+
+      #lghd { left: 5vw; font-size: 4vh; top: 4vh; }
+      #aim { left: 5vw; font-size: 2vh; top: 12vh; }
+      #lg { right: 5vw; font-size: 4vh; top: 4vh; }
+
+      #inp1 {
+        width: 70vw;
+        right: 5vw;
+        font-size: 3.5vw;
+        border-radius: 3vw;
+        bottom: 52vh;
+      }
+
+      #inp2 {
+        width: 70vw;
+        right: 5vw;
+        font-size: 3.5vw;
+        border-radius: 3vw;
+        bottom: 42vh;
+      }
+
+      #loginBtn {
+        width: 35vw;
+        right: 5vw;
+        bottom: 32vh;
+      }
+
+      .navbtn {
+        font-size: 1.3vh;
+        position: relative;
+        top: auto;
+        left: auto;
+      }
+
+      .nav, .nav2, .nav3, .nav4 {
+        position: absolute;
+        justify-content: space-evenly;
+        padding: 0 1vw;
+        flex-wrap: nowrap;
+        gap: 0;
+      }
+
+      #lbtn, #tbtn, #rbtn, #sbtn, #cbtn {
+        position: relative;
+        top: auto;
+        left: auto;
+      }
+
+      .match-box {
+        width: 85vw;
+      }
+
+      /* Trivia */
+      .question-box {
+        width: 88vw;
+        font-size: 2.5vh;
+      }
+
+      .options {
+        width: 88vw;
+      }
+
+      #summary {
+        width: 80vw;
+        left: 10vw;
+      }
+
+      /* Rankings */
+      .rank-table {
+        width: 96%;
+        top: 80px;
+      }
+
+      .rank-row {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+      }
+
+      /* Review / match cards */
+      #mainbg {
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .match-card {
+        width: 85vw;
+        height: 35vh;
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        margin: 2vh auto;
+      }
+
+      #match1, #match2, #match3, #match4, #match5 {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+
+      #mainbg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 8vh;
+        padding-bottom: 4vh;
+      }
+
+      .title {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 1vh;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      .httl { top: 22vh; left: 5vw; }
+      .htl2 { top: 27vh; left: 3vw; }
+    }
+
+    /* Small phones (≤480px) */
+    @media (max-width: 480px) {
+      #mainhd {
+        font-size: 22px;
+        padding-left: 10vw;
+      }
+
+      .menu {
+        width: 10vw;
+      }
+
+      .icon {
+        font-size: 12px;
+        margin: 12px auto;
+      }
+
+      .container {
+        margin-left: 10vw;
+      }
+
+      .item2 {
+        width: 80vw;
+      }
+
+      .item2 img {
+        height: 160px;
+      }
+
+      /* Calculator */
+      .calc {
+        width: 88vw;
+      }
+
+      .item {
+        width: 22vw;
+        margin-left: 2vw;
+      }
+
+      .calc button {
+        font-size: 5vw;
+      }
+
+      #clr, #clr2 {
+        width: 22vw;
+        font-size: 3.5vw;
+      }
+
+      /* Weather */
+      .weatbg {
+        width: 90vw;
+        margin-left: 5vw;
+      }
+
+      #weatimg {
+        width: 25vw;
+      }
+
+      #w1 { font-size: 6vh; margin-left: 32vw; }
+      #w2 { font-size: 3vh; margin-left: 32vw; }
+
+      #next {
+        width: 12vw;
+        margin-left: 44vw;
+      }
+
+      .weatbg2 {
+        width: 90vw;
+        margin-left: 5vw;
+      }
+
+      #place { font-size: 24px; left: 28%; }
+      #temp { font-size: 40px; left: 32%; }
+      #weather2 { font-size: 14px; left: 20%; top: 28%; }
+      #etc1 { font-size: 14px; left: 20%; top: 34%; }
+      #etc2 { font-size: 14px; left: 50%; top: 34%; }
+
+      /* Joke */
+      .jkbg, .jkbg2 {
+        width: 90vw;
+        margin-left: 5vw;
+      }
+
+      #head { font-size: 10vw; }
+      #head2 { font-size: 4.5vw; }
+      .start-btn { font-size: 5vw; padding: 1.2vh 5vw; }
+      .emoji-row { font-size: 10vw; }
+
+      #chuck {
+        width: 50vw;
+        left: 25%;
+      }
+
+      #jokeBtn {
+        width: 65vw;
+        height: 65vw;
+        left: 2vw;
+        top: 16vh;
+      }
+
+      #jokeui2 {
+        width: 90vw;
+      }
+
+      #nextBtn {
+        width: 40vw;
+      }
+
+      /* Cricket */
+      .defbg2 {
+        width: 92vw;
+        margin-left: 4vw;
+      }
+
+      #inp1, #inp2 {
+        width: 75vw;
+        font-size: 4vw;
+      }
+
+      #loginBtn {
+        width: 40vw;
+      }
+
+      .navbtn {
+        font-size: 1.1vh;
+      }
+
+      .match-card {
+        width: 90vw;
+        height: 32vh;
+      }
+
+      .rank-row {
+        font-size: 0.78rem;
+        padding: 8px 10px;
+      }
+
+      #searchInput {
+        width: 80vw;
+      }
+    }
   </style>
 </head>
 
