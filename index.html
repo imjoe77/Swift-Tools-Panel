@@ -1619,239 +1619,327 @@
     }
 
     /* =============================================
-       RESPONSIVE MEDIA QUERIES
+       RESPONSIVE — mobile only (≤900px)
+       Desktop (>900px) is completely unchanged.
        ============================================= */
-
-    /* ---- SHARED mobile card fix ----
-       On screens where the fixed 380px card breaks,
-       we switch .item2 to normal flow so img/button
-       don't need absolute pixel offsets.
-    ---- */
-
     @media (max-width: 900px) {
 
-      /* === HEADER === */
+      /* HEADER */
       #mainhd {
-        font-size: 26px;
-        padding-left: 9vw;
+        font-size: 24px;
+        padding-left: 10vw;
       }
 
-      /* === SIDEBAR === */
-      .menu {
-        width: 8vw;
-      }
-      .icon {
-        font-size: 13px;
-        margin: 14px auto;
-      }
+      /* SIDEBAR */
+      .menu { width: 9vw; }
+      .icon { font-size: 12px; margin: 12px auto; }
 
-      /* === TOOL CARD GRID — single column === */
+      /* ----------------------------------------
+         TOOL CARD GRID — single column, full width
+      ---------------------------------------- */
       .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-auto-flow: row;
-        margin-left: 9vw;
-        padding-right: 2vw;
+        display: block;         /* drop grid entirely on mobile */
+        padding-left: 10vw;
+        padding-right: 3vw;
       }
 
-      /* === ITEM2 CARD — switch to normal flow === */
+      /* Each card: fixed height removed, flex column */
       .item2 {
-        /* replace fixed 380×300px with fluid sizing */
-        width: 85vw;
-        height: auto;
-        min-height: unset;
-        margin-left: 2vw;
-        margin-top: 30px;
-        border-radius: 16px;
+        width: 87vw !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 24px !important;
+        border-radius: 14px !important;
         overflow: hidden;
         position: relative;
-        padding-bottom: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding-bottom: 12px;
+        box-sizing: border-box;
       }
 
-      /* Image: was absolutely positioned with margin-left:-85px — fix to block flow */
+      /* Card image — was position:absolute margin-left:-85px
+         Override everything to make it a normal block element */
+      .item2 > img,
       .item2 img {
-        position: relative !important;
+        position: static !important;
+        display: block !important;
         width: 100% !important;
-        height: 180px !important;
-        margin-left: 0 !important;
-        margin-top: 0 !important;
-        border-radius: 12px 12px 0 0 !important;
-        object-fit: cover;
-        display: block;
+        height: 170px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        object-fit: cover !important;
       }
 
-      /* h2 label */
+      /* Card title */
       .item2 h2 {
-        padding: 8px 12px 4px;
-        font-size: 18px;
+        padding: 10px 14px 4px;
+        font-size: 17px;
       }
 
-      /* LOAD button: was margin-top:320px — reset to normal flow */
-      .item2 button {
-        position: relative !important;
-        margin-top: 8px !important;
-        margin-left: 12px !important;
-        width: 90px;
-        height: 32px;
-        font-size: 16px;
+      /* LOAD button — was margin-top:320px which pushed it way down */
+      .item2 > button,
+      .item2 button:first-child {
+        position: static !important;
+        display: inline-block !important;
+        margin: 8px 0 4px 14px !important;
+        width: 88px !important;
+        height: 30px !important;
+        font-size: 15px !important;
       }
 
       /* Hide decorative side panel */
-      .itemlast2 {
-        display: none;
-      }
+      .itemlast2 { display: none !important; }
 
-      /* === CALCULATOR === */
+
+      /* ----------------------------------------
+         CALCULATOR
+      ---------------------------------------- */
       .main {
-        width: 96vw;
+        width: 97vw;
         left: 0;
-        margin-left: 1vw;
+        margin: 0 auto;
+        top: 6vh;
+        height: auto;
+        min-height: 80vh;
+        padding: 3vh 0;
       }
       .calc {
-        width: 76vw;
-        height: 78vh;
-        gap: 4vh 2vw;
+        width: 82vw;
+        height: auto;
+        gap: 2.5vw;
+        padding: 2vw;
       }
       .item {
-        width: 17vw;
-        height: 7vh;
-        margin-left: 2.5vw;
+        width: auto;
+        height: 9vw;
+        margin-left: 0;
       }
       .calc button {
-        font-size: 4vw;
+        font-size: 4.5vw;
+        border-radius: 2vw;
+        width: 100%;
+        height: 100%;
+      }
+      .itemlast {
+        height: 12vw;
+        font-size: 5vw;
+        padding-right: 2vw;
+        padding-top: 1vw;
+      }
+      /* C and REMOVE buttons — were absolute with margin-right:40vw */
+      #clr {
+        position: absolute;
+        width: 14vw;
+        height: 5vw;
+        font-size: 3vw;
+        margin: 0;
+        top: 1vw;
+        left: 2vw;
+        right: auto;
         border-radius: 2vw;
       }
-      #clr {
-        width: 16vw;
-        height: 4vh;
-        font-size: 3vw;
-        margin-right: 0;
-        left: 2vw;
-        top: 1vh;
-      }
       #clr2 {
-        width: 20vw;
-        height: 4vh;
+        position: absolute;
+        width: 22vw;
+        height: 5vw;
         font-size: 2.5vw;
-        margin-right: 0;
+        margin: 0;
+        top: 8vw;
         left: 2vw;
-        margin-top: 6vh;
+        right: auto;
+        border-radius: 2vw;
       }
 
-      /* === WEATHER intro screen === */
+
+      /* ----------------------------------------
+         WEATHER — intro screen
+      ---------------------------------------- */
       .weatbg {
         width: 90vw;
         margin-left: 5vw;
-        margin-top: 8vh;
+        margin-top: 6vh;
+        height: 70vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
       }
       #weatimg {
-        width: 22vw;
-        top: 8vh;
+        position: relative;
+        top: auto;
+        width: 18vw;
+        max-height: none;
+        margin: 0 auto;
+        display: block;
       }
-      #w1 { font-size: 7vh; margin-left: 28vw; }
-      #w2 { font-size: 3.5vh; margin-left: 28vw; }
-      #next { width: 10vw; height: 7vh; margin-left: 42vw; }
+      #w1 {
+        font-size: 8vh;
+        margin-left: 0;
+        text-align: center;
+      }
+      #w2 {
+        font-size: 4vh;
+        position: relative;
+        margin: 0;
+        text-align: center;
+      }
+      #next {
+        position: relative;
+        bottom: auto;
+        margin: 0 auto;
+        width: 14vw;
+        height: 7vh;
+        font-size: 4vh;
+      }
 
-      /* === WEATHER main screen === */
+      /* WEATHER — forecast screen */
       .weatbg2 {
-        width: 90vw;
-        margin-left: 5vw;
-        margin-top: 8vh;
+        width: 92vw;
+        margin-left: 4vw;
+        margin-top: 6vh;
+        height: 100vh;
       }
-      #place  { font-size: 30px; left: 25%; top: 6%; }
-      #temp   { font-size: 46px; left: 30%; top: 13%; }
-      #weather2 { font-size: 16px; left: 18%; top: 24%; }
-      #etc1   { font-size: 16px; left: 18%; top: 30%; }
-      #etc2   { font-size: 16px; left: 50%; top: 30%; }
-      #addbtn, #dmbtn, #dmbtn2 { width: 9vw; height: 5vh; font-size: 2.5vh; }
+      #place    { font-size: 7vw;  left: 5%; top: 6%; }
+      #temp     { font-size: 12vw; left: 8%; top: 13%; }
+      #weather2 { font-size: 4vw;  left: 5%; top: 26%; }
+      #etc1     { font-size: 4vw;  left: 5%; top: 32%; }
+      #etc2     { font-size: 4vw;  left: 45%; top: 32%; }
+      #addbtn, #dmbtn, #dmbtn2 {
+        width: 10vw; height: 5vh; font-size: 3vh;
+      }
+      /* forecast day items */
+      .text1 { font-size: 1.2vh; top: 2vh; }
+      .wemoj { font-size: 4vh; top: 7vh; }
+      .wtemp { font-size: 2.5vh; top: 15vh; }
 
-      /* weather search */
-      #searchInput { width: 72vw; }
-      .fact-box { white-space: normal; font-size: 0.85rem; }
+      /* search page */
+      #searchInput  { width: 68vw; padding: 1.5vh 3vw; }
+      .fact-box     { white-space: normal; font-size: 0.85rem; }
 
       /* weather card */
-      #place2 { font-size: 7vh; }
-      #temp2  { font-size: 10vh; }
-      #wetc2  { left: 5vw; }
-      #etc3   { left: 38vw; }
+      #place2 { font-size: 8vh; }
+      #date   { font-size: 2.2vh; top: 16vh; }
+      #temp2  { font-size: 11vh; }
+      #wt2    { font-size: 4vh; }
+      #wetc2  { font-size: 3vh; left: 5vw; }
+      #etc3   { font-size: 3vh; left: 42vw; }
+      #line   { font-size: 3vh; }
+      #back   { top: 58vh; left: 2vw; font-size: 2vh; }
+      #me1    { top: 57vh; right: 2vw; }
 
-      /* === JOKE === */
-      .jkbg, .jkbg2 {
-        width: 90vw;
-        margin-left: 5vw;
+
+      /* ----------------------------------------
+         JOKE TELLER
+      ---------------------------------------- */
+      .jkbg {
+        width: 88vw;
+        margin-left: 6vw;
+        margin-top: 6vh;
+        height: auto;
+        min-height: 70vh;
+        padding: 4vh 4vw;
+      }
+      .jkbg2 {
+        width: 88vw;
+        margin-left: 6vw;
+        margin-top: 6vh;
+        height: 90vh;
       }
       #head        { font-size: 9vw; }
-      #head2       { font-size: 4vw; }
-      .start-btn   { font-size: 4.5vw; padding: 1.2vh 5vw; }
+      #head2       { font-size: 4vw; width: 90%; }
       .emoji-row   { font-size: 9vw; }
-      #chuck       { width: 38vw; left: 31%; }
-      #jokeBtn     { width: 52vw; height: 52vw; left: 4vw; top: 17vh; }
-      #text        { font-size: 2.5vh; bottom: 4%; text-align: center; padding: 0 4vw; }
-      #jokeui2     { width: 84vw; height: auto; min-height: 24vh; }
-      .joketext    { font-size: 3vh; }
-      #nextBtn     { width: 32vw; height: 6vh; }
-      #xbtn        { width: 5vw; }
-      .xbtn2       { width: 6vw; }
+      .start-btn   { font-size: 4.5vw; padding: 1.5vh 6vw; border-radius: 2vw; }
+      #chead       { font-size: 7vh; }
+      #chuck       { width: 36vw; height: 36vw; left: 32%; top: 18%; }
+      #jokeBtn     { width: 50vw; height: 50vw; left: 5vw; top: 16vh; border-radius: 50%; }
+      #text        { font-size: 2.2vh; bottom: 3%; text-align: center; padding: 0 5vw; }
+      #jokeui2 {
+        width: 86vw;
+        height: auto;
+        min-height: 22vh;
+        padding: 3vh 4vw;
+      }
+      #jkhead      { font-size: 3.5vh; }
+      .joketext    { font-size: 2.5vh; top: 7vh; }
+      #nextBtn     { width: 30vw; height: 6vh; }
+      #xbtn        { width: 6vw; font-size: 2vh; }
+      .xbtn2       { width: 7vw; font-size: 2.5vh; }
+      #btntxt      { font-size: 1.6vh; left: 0.5vw; }
 
-      /* === CRICKET login === */
+
+      /* ----------------------------------------
+         CRICKET — login
+      ---------------------------------------- */
       .defbg2 {
         width: 90vw;
         margin-left: 5vw;
-        margin-top: 5vw;
+        margin-top: 4vw;
         height: auto;
         min-height: 90vh;
       }
-      .cricbg { flex-direction: column; }
+      .cricbg { flex-direction: column; position: relative; }
       #clgin  { display: none; }
-      #lghd   { left: 5vw; font-size: 4vh; top: 4vh; }
-      #aim    { left: 5vw; font-size: 2vh; top: 12vh; }
-      #lg     { right: 5vw; font-size: 4vh; top: 4vh; }
+      #lghd   { position: absolute; left: 5vw; font-size: 5vh; top: 5vh; right: auto; }
+      #aim    { position: absolute; left: 5vw; font-size: 2.2vh; top: 14vh; right: auto; }
+      #lg     { position: absolute; right: 5vw; font-size: 4vh; top: 5vh; }
       #inp1 {
-        width: 68vw; right: 5vw; font-size: 3.5vw;
-        border-radius: 3vw; bottom: 52vh;
+        position: absolute;
+        width: 70vw; right: 5vw; left: auto;
+        font-size: 3.5vw; border-radius: 3vw;
+        bottom: 55vh; padding: 1.5vh 3vw;
+        color: white;
       }
       #inp2 {
-        width: 68vw; right: 5vw; font-size: 3.5vw;
-        border-radius: 3vw; bottom: 42vh;
+        position: absolute;
+        width: 70vw; right: 5vw; left: auto;
+        font-size: 3.5vw; border-radius: 3vw;
+        bottom: 44vh; padding: 1.5vh 3vw;
+        color: white;
       }
-      #loginBtn { width: 34vw; right: 5vw; bottom: 30vh; }
+      #loginBtn { width: 35vw; right: 5vw; bottom: 32vh; font-size: 2vh; }
 
-      /* nav buttons: switch from absolute positions to flex layout */
+      /* CRICKET nav bars */
       .navbtn {
-        font-size: 1.3vh;
+        font-size: 1.4vh;
         position: relative;
         top: auto; left: auto;
         white-space: nowrap;
+        padding: 0 1vw;
       }
       .nav, .nav2, .nav3, .nav4 {
         justify-content: space-evenly;
-        padding: 0;
         flex-wrap: nowrap;
-        gap: 0;
         height: auto;
-        min-height: 6vh;
+        min-height: 7vh;
+        padding: 1vh 0;
       }
       #lbtn, #tbtn, #rbtn, #sbtn, #cbtn {
         position: relative;
         top: auto; left: auto;
       }
 
-      /* cricket match boxes */
-      .match-box { width: 84vw; }
+      /* cricket match score boxes */
+      .match-box { width: 86vw; }
+      .container2 { width: 90vw; margin-top: 12vh; }
 
       /* trivia */
-      .question-box { width: 86vw; font-size: 2.5vh; }
-      .options      { width: 86vw; }
-      #summary      { width: 80vw; left: 10vw; }
+      .question-box { width: 88vw; font-size: 2.5vh; left: 4vw; }
+      .options      { width: 88vw; left: 4vw; }
+      #controls     { bottom: 18vh; gap: 3vw; }
+      #summary      { width: 82vw; left: 9vw; font-size: 2vh; }
+      .qhead        { font-size: 4vh; }
+      .nxtbtn       { font-size: 1.8vh; }
 
       /* rankings */
-      .rank-table { width: 96%; top: 80px; }
-      .rank-row   { font-size: 0.85rem; padding: 10px 12px; }
+      #cmbg         { padding-top: 20px; }
+      .ranking-title { font-size: 1.6rem; white-space: nowrap; }
+      .rank-table   { width: 96%; top: 70px; }
+      .rank-row     { font-size: 0.85rem; padding: 10px 10px; }
 
-      /* review / match cards: stack vertically */
+      /* review match cards — stack vertically */
       #mainbg {
         height: auto;
         min-height: 100vh;
@@ -1860,75 +1948,79 @@
         align-items: center;
         padding-top: 8vh;
         padding-bottom: 4vh;
+        overflow-y: auto;
       }
       .title {
         position: relative;
         top: auto; left: auto;
         transform: none;
-        margin-bottom: 1vh;
         font-size: 1.3rem;
         text-align: center;
+        width: 90%;
+        margin-bottom: 2vh;
         white-space: normal;
       }
       .match-card {
         position: relative !important;
-        width: 84vw !important;
-        height: 32vh;
+        width: 86vw !important;
+        height: 30vh !important;
         top: auto !important; left: auto !important;
         right: auto !important; bottom: auto !important;
-        margin: 2vh auto;
+        margin: 1.5vh 0 !important;
+        flex-shrink: 0;
       }
-      .httl { top: 22vh; left: 5vw; }
-      .htl2 { top: 27vh; left: 3vw; }
+      .httl { top: 21vh; left: 5vw; font-size: 2.5vh; }
+      .htl2 { top: 25.5vh; left: 3vw; font-size: 2vh; }
     }
 
-    /* Small phones (≤480px) — tighten further */
+
+    /* ----------------------------------------
+       SMALL PHONES ≤ 480px — tighten further
+    ---------------------------------------- */
     @media (max-width: 480px) {
-      #mainhd { font-size: 20px; padding-left: 11vw; }
+      #mainhd { font-size: 20px; }
       .menu   { width: 11vw; }
-      .icon   { font-size: 11px; margin: 11px auto; }
-      .container { margin-left: 11vw; }
+      .container { padding-left: 12vw; }
 
-      .item2        { width: 78vw; }
-      .item2 img    { height: 150px !important; }
-      .item2 h2     { font-size: 16px; }
-      .item2 button { width: 80px; font-size: 14px; }
+      .item2  { width: 82vw !important; }
+      .item2 > img, .item2 img { height: 145px !important; }
 
-      .calc   { width: 86vw; }
-      .item   { width: 22vw; margin-left: 2vw; }
+      /* calc tighter */
+      .calc { width: 86vw; }
+      .item { height: 10vw; }
       .calc button { font-size: 5vw; }
-      #clr, #clr2  { width: 22vw; font-size: 3.5vw; }
+      #clr  { width: 16vw; height: 6vw; font-size: 3.5vw; top: 0.5vw; }
+      #clr2 { width: 26vw; height: 6vw; font-size: 3vw; top: 8vw; }
 
-      .weatbg    { width: 88vw; margin-left: 6vw; }
-      #w1        { font-size: 6vh; margin-left: 30vw; }
-      #w2        { font-size: 3vh; margin-left: 30vw; }
-      #next      { width: 12vw; margin-left: 44vw; }
-      .weatbg2   { width: 88vw; margin-left: 6vw; }
-      #place     { font-size: 22px; left: 20%; }
-      #temp      { font-size: 36px; left: 25%; }
-      #weather2  { font-size: 13px; left: 12%; }
-      #etc1      { font-size: 13px; left: 12%; }
-      #etc2      { font-size: 13px; left: 48%; }
-      #searchInput { width: 80vw; }
+      /* weather */
+      .weatbg  { width: 88vw; margin-left: 6vw; }
+      #weatimg { width: 22vw; }
+      #w1  { font-size: 7vh; }
+      #w2  { font-size: 3.5vh; }
+      #next { width: 16vw; }
+      .weatbg2 { width: 88vw; margin-left: 6vw; }
+      #place   { font-size: 8vw; }
+      #temp    { font-size: 13vw; }
 
-      .jkbg, .jkbg2 { width: 88vw; margin-left: 6vw; }
-      #head      { font-size: 11vw; }
-      #head2     { font-size: 5vw; }
-      .start-btn { font-size: 5.5vw; }
-      .emoji-row { font-size: 11vw; }
-      #chuck     { width: 48vw; left: 26%; }
-      #jokeBtn   { width: 62vw; height: 62vw; left: 2vw; }
-      #jokeui2   { width: 88vw; }
-      #nextBtn   { width: 40vw; }
+      /* joke */
+      .jkbg, .jkbg2 { width: 86vw; margin-left: 7vw; }
+      #head    { font-size: 11vw; }
+      #head2   { font-size: 4.5vw; }
+      .start-btn { font-size: 5vw; }
+      #chuck   { width: 40vw; height: 40vw; left: 30%; }
+      #jokeBtn { width: 56vw; height: 56vw; left: 2vw; }
+      #jokeui2 { width: 88vw; }
+      #nextBtn { width: 36vw; }
 
-      .defbg2    { width: 88vw; margin-left: 6vw; }
-      #inp1, #inp2 { width: 72vw; font-size: 4vw; }
-      #loginBtn  { width: 38vw; }
-      .navbtn    { font-size: 1.1vh; }
-
-      .match-card { width: 88vw !important; height: 30vh; }
-      .rank-row   { font-size: 0.76rem; padding: 8px 8px; }
+      /* cricket */
+      .defbg2 { width: 88vw; margin-left: 6vw; }
+      #inp1, #inp2 { width: 74vw; font-size: 4vw; }
+      #loginBtn    { width: 40vw; font-size: 1.8vh; }
+      .navbtn      { font-size: 1.2vh; }
+      .match-card  { width: 88vw !important; }
+      .rank-row    { font-size: 0.76rem; }
     }
+
   </style>
 </head>
 
