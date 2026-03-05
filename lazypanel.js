@@ -522,7 +522,7 @@ function jokeui() {
 
   let head2 = document.createElement("p");
   head2.id = "head2";
-  head2.innerText = "Welcome to your daily dose of laughter! Let’s tickle your funny bone 😄";
+  head2.innerText = "Welcome to your daily dose of laughter! Let's tickle your funny bone 😄";
   maindiv.appendChild(head2);
 
   let emj = document.createElement("div");
@@ -580,38 +580,38 @@ function jokeui3() {
 }
 //Array of jokes
 const jokesArray = [
-  "Why don’t scientists trust atoms? Because they make up everything!",
+  "Why don't scientists trust atoms? Because they make up everything!",
   "Why did the computer go to therapy? It had too many bytes.",
   "What do you get when you cross a snowman and a vampire? Frostbite.",
   "Why did the scarecrow win an award? Because he was outstanding in his field!",
-  "What’s orange and sounds like a parrot? A carrot.",
+  "What's orange and sounds like a parrot? A carrot.",
   "Why did the math book look sad? It had too many problems.",
   "What do you call fake spaghetti? An impasta!",
   "Why don't programmers like nature? Too many bugs.",
   "How do you organize a space party? You planet.",
   "Why did the cookie cry? Because its mother was a wafer too long.",
-  "Why can’t you give Elsa a balloon? Because she’ll let it go!",
+  "Why can't you give Elsa a balloon? Because she'll let it go!",
   "What did one ocean say to the other? Nothing, they just waved.",
   "Why did the tomato turn red? Because it saw the salad dressing!",
   "Why did the bicycle fall over? Because it was two-tired.",
   "Why did the coffee file a police report? It got mugged.",
   "Why did the smartphone need glasses? It lost its contacts.",
   "What do you call cheese that isn't yours? Nacho cheese.",
-  "What’s a skeleton’s least favorite room in the house? The living room.",
+  "What's a skeleton's least favorite room in the house? The living room.",
   "Why did the chicken go to the séance? To talk to the other side.",
   "How do you make holy water? You boil the hell out of it.",
   "What did the janitor say when he jumped out of the closet? Supplies!",
   "Why was the math teacher suspicious of prime numbers? Because they were odd.",
-  "Why did the banana go to the doctor? Because it wasn’t peeling well.",
+  "Why did the banana go to the doctor? Because it wasn't peeling well.",
   "What does a cloud wear under his raincoat? Thunderwear!",
   "Why did the golfer bring two pairs of pants? In case he got a hole in one.",
   "Why did the computer keep freezing? It left its Windows open.",
   "What do you call a fish wearing a bowtie? Sofishticated.",
   "What kind of music do mummies listen to? Wrap music.",
-  "Why couldn’t the leopard play hide and seek? Because he was always spotted.",
+  "Why couldn't the leopard play hide and seek? Because he was always spotted.",
   "How does the moon cut his hair? Eclipse it.",
   "Why did the student eat his homework? Because the teacher said it was a piece of cake.",
-  "Why can't you trust stairs? They’re always up to something.",
+  "Why can't you trust stairs? They're always up to something.",
   "How does a penguin build its house? Igloos it together.",
   "Why did the cow win an award? Because it was legen-dairy.",
   "What kind of tree fits in your hand? A palm tree.",
@@ -620,16 +620,16 @@ const jokesArray = [
   "Why do bees have sticky hair? Because they use honeycombs.",
   "What do you call a lazy kangaroo? A pouch potato.",
   "Why did the egg get thrown out of class? Because it kept cracking jokes.",
-  "Why don’t skeletons fight each other? They don’t have the guts.",
+  "Why don't skeletons fight each other? They don't have the guts.",
   "Why did the music teacher go to jail? Because she got caught with too many sharp objects.",
   "What do you call two birds in love? Tweethearts.",
   "Why are ghosts bad at lying? Because you can see right through them.",
-  "Why don’t elephants use computers? They’re afraid of the mouse.",
+  "Why don't elephants use computers? They're afraid of the mouse.",
   "How do you make a tissue dance? Put a little boogie in it.",
   "What did the fish say when it hit the wall? Dam.",
   "Why was the broom late? It overswept.",
   "Why did the cat sit on the computer? To keep an eye on the mouse.",
-  "What did the triangle say to the circle? You’re pointless."
+  "What did the triangle say to the circle? You're pointless."
 ];
 //JOKES
 function joke() {
@@ -756,7 +756,7 @@ function cricui() {
 
   let inp2 = document.createElement("input");
   inp2.id = "inp2";
-  inp2.placeholder = "Enter any password";
+  inp2.placeholder = "Enter any password (simulation only)";
   inp2.type = "password";
   cricbg.appendChild(inp2);
 
@@ -1330,7 +1330,7 @@ function review() {
 
   let hhead = document.createElement("div");
   hhead.className = "title";
-  hhead.innerText = "🏏 Cricket’s Greatest Showdowns";
+  hhead.innerText = "🏏 Cricket's Greatest Showdowns";
   hlbg.appendChild(hhead);
 
 
@@ -1459,8 +1459,3 @@ cal.addEventListener("click", loadcalculator);
 weat.addEventListener("click", loadweather);
 jk.addEventListener("click", jokes);
 cric.addEventListener("click", cricinfo);
-
-
-
-
-
