@@ -41,7 +41,7 @@ This project demonstrates how modern frontend frameworks work internally — usi
 
   📄 License
 
-MIT
+      MIT
 
 ## 🔗 Live Demo -
 [Click here](https://imjoe77.github.io/Swift-Tools-Panel/)
