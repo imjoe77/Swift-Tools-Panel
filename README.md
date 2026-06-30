@@ -39,5 +39,9 @@ This project demonstrates how modern frontend frameworks work internally — usi
 - Structuring JavaScript for modular UI logic
 - Creating interactive developer-style utilities
 
+  📄 License
+
+MIT
+
 ## 🔗 Live Demo -
 [Click here](https://imjoe77.github.io/Swift-Tools-Panel/)
