@@ -38,10 +38,10 @@ This project demonstrates how modern frontend frameworks work internally — usi
 - Handling asynchronous API calls
 - Structuring JavaScript for modular UI logic
 - Creating interactive developer-style utilities
+---
+## 📄 License
 
-  📄 License
-
-      MIT
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Live Demo -
 [Click here](https://imjoe77.github.io/Swift-Tools-Panel/)
