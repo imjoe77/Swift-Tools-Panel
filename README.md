@@ -44,4 +44,4 @@ This project demonstrates how modern frontend frameworks work internally — usi
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Live Demo -
-[Click here](https://imjoe77.github.io/Swift-Tools-Panel/)
+[Click here](https://swift-tools-panel.vercel.app/)
